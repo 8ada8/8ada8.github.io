@@ -1,9 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+ <!DOCTYPE html>
+<html lang="cs">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Merry Christmas Adelko</title>
+    <title>Adéla Plátková – Pedagožka & Umělkyně</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,104 +16,376 @@
 
         body {
             min-height: 100vh;
+            font-family: 'Inter', sans-serif;
+            background: #fafafa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .header {
+            background: #fff;
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+        }
+
+        .header-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
             display: flex;
-            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #1a472a 0%, #2d5a3f 50%, #1a472a 100%);
-            font-family: 'Georgia', serif;
-            padding: 20px;
+            justify-content: space-between;
         }
 
-        .container {
-            text-align: center;
-            max-width: 800px;
-        }
-
-        h1 {
-            color: #ffd700;
-            font-size: 3.5rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            margin-bottom: 30px;
-            animation: glow 2s ease-in-out infinite alternate;
-        }
-
-        @keyframes glow {
-            from {
-                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 0 0 10px #ffd700;
-            }
-            to {
-                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 0 0 20px #ffd700, 0 0 30px #ffaa00;
-            }
-        }
-
-        .image-container {
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-            border: 5px solid #ffd700;
-        }
-
-        .image-container img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .snowflakes {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            overflow: hidden;
-            z-index: -1;
-        }
-
-        .snowflake {
-            position: absolute;
-            color: white;
+        .name {
             font-size: 1.5rem;
-            animation: fall linear infinite;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #1a1a1a;
+        }
+
+        .hero {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 24px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.25rem;
+            color: #666;
+            margin-bottom: 24px;
+        }
+
+        .hero-text p {
+            color: #555;
+            margin-bottom: 32px;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 32px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 28px;
+            border: 1px solid #eee;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .card a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .card a:hover {
+            text-decoration: underline;
+        }
+
+        .singing-section {
+            background: #fff;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+
+        .singing-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 24px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .singing-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .singing-text h2 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+        }
+
+        .singing-text p {
+            color: #555;
+        }
+
+        .links-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: #1a1a1a;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: #333;
+        }
+
+        .btn-secondary {
+            background: #fff;
+            color: #1a1a1a;
+            border: 1px solid #ddd;
+        }
+
+        .btn-secondary:hover {
+            background: #f5f5f5;
+        }
+
+        .btn svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        .footer {
+            background: #fff;
+            border-top: 1px solid #eee;
+            padding: 40px 24px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            max-width: 120px;
+            margin-bottom: 16px;
             opacity: 0.8;
         }
 
-        @keyframes fall {
-            0% {
-                transform: translateY(-10vh) rotate(0deg);
+        .footer p {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 40px 24px;
             }
-            100% {
-                transform: translateY(110vh) rotate(360deg);
+
+            .hero-text {
+                order: 2;
+            }
+
+            .hero-image {
+                order: 1;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .singing-content {
+                grid-template-columns: 1fr;
+            }
+
+            .singing-image {
+                order: 1;
+            }
+
+            .singing-text {
+                order: 2;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .nav-links {
+                gap: 16px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="snowflakes" id="snowflakes"></div>
-    
-    <div class="container">
-        <h1>🎄 Merry Christmas Adelko 🎄</h1>
-        <div class="image-container">
-            <img src="images/blesk_christmas.jpg" alt="Christmas">
+    <header class="header">
+        <div class="header-content">
+            <div class="name">Adéla Plátková</div>
+            <nav class="nav-links">
+                <a href="https://www.linkedin.com/in/adéla-plátková-87390283/" target="_blank" rel="noopener">LinkedIn</a>
+            </nav>
         </div>
-    </div>
+    </header>
 
-    <script>
-        // Create snowflakes
-        const snowflakesContainer = document.getElementById('snowflakes');
-        const snowflakeSymbols = ['❄', '❅', '❆', '✻', '✼'];
-        
-        for (let i = 0; i < 50; i++) {
-            const snowflake = document.createElement('div');
-            snowflake.className = 'snowflake';
-            snowflake.textContent = snowflakeSymbols[Math.floor(Math.random() * snowflakeSymbols.length)];
-            snowflake.style.left = Math.random() * 100 + '%';
-            snowflake.style.animationDuration = (Math.random() * 5 + 5) + 's';
-            snowflake.style.animationDelay = (Math.random() * 10) + 's';
-            snowflake.style.fontSize = (Math.random() * 1.5 + 0.5) + 'rem';
-            snowflakesContainer.appendChild(snowflake);
-        }
-    </script>
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Pedagožka, která ráda inovuje</h1>
+            <p class="subtitle">Tvořím prakticky a společně</p>
+            <p>
+                Učím výtvarnou výchovu a neustále hledám nové cesty, jak propojit umění s praktickým řemeslem.
+                Věřím, že kreativita a inovace patří do každé třídy.
+            </p>
+        </div>
+        <div class="hero-image">
+            <img src="images/adelka_s_bleskem.jpg" alt="Adéla Plátková">
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Čím se zabývám</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Výtvarná výchova</h3>
+                <p>Učím na Gymnáziu a SOŠ ekonomická Sedlčany. Se studenty vytvářím projekty, které mají přesah – 
+                    od navigačního systému školy po výstavy studentských prací a malování zdí mateřské školky.</p>
+            </div>
+            <div class="card">
+                <h3>Design vzdělávání</h3>
+                <p>Designovala jsem pedagogické předškolní vzdělání pro <a href="https://www.stoskupin.cz" target="_blank" rel="noopener">Sto Skupin</a> – inovativní přístup k výuce nejmenších.</p>
+                <p>V <a href="https://www.qdesigners.co/" target="_blank" rel="noopener">QDesigners</a> jsem se naučila modernímu design thinking procesu a inspirovala se vznikem mnoha <a href="https://www.qdesigners.co/work-cz" target="_blank" rel="noopener">projektů s udržitelnám přesahem</a>.</p>
+            </div>
+            <div class="card">
+                <h3>Restaurátorství</h3>
+                <p>Vystudovala jsem VŠCHT a rekonstruovala šaty z hrobky manželek Karla IV v dílnách Pražského Hradu. Více v článku <a href="https://www.researchgate.net/publication/306070430_Zensky_surcot_z_kralovske_krypty" target="_blank" rel="noopener">Ženský surcot z královské krypty</a>.</p>
+            </div>
+            <div class="card">
+                <h3>Inovace ve výuce</h3>
+                <p>Propojuji tradiční řemesla s moderními přístupy. Hledám způsoby, jak studentům ukázat, že umění může měnit prostředí kolem nás.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="singing-section">
+        <div class="singing-content">
+            <div class="singing-image">
+                <img src="images/adelka_knowledge_transfer.jpeg" alt="Adéla předává znalosti dětem">
+            </div>
+            <div class="singing-text">
+                <h2>Vyvažuji  svobodu a zodpovědnost</h2>
+                <p>Podporuji děti ve vlastních nápadech a kreativitě. Zároveň prakticky radím dětem jak díla řemeslně vylepšit a dokončit včas. Dbám, aby studenti svoje práce dokončili a byly na ně hrdí. Naše díla hrdě vystavujeme.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="singing-section">
+        <div class="singing-content">
+            <div class="singing-image">
+                <img src="images/adelka_singing.jpeg" alt="Adéla zpívá">
+            </div>
+            <div class="singing-text">
+                <h2>Umění je víc než štětec</h2>
+                <p>Kromě výtvarného umění mě baví i hudba. Zpěv je pro mě další způsob, jak se vyjádřit ale i forma odpočinku.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="links-section">
+        <div class="links">
+            <a href="https://www.linkedin.com/in/adéla-plátková-87390283/" target="_blank" rel="noopener" class="btn btn-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+            </a>
+            <a href="https://ceskepodcasty.cz/podcast/mliko-v-hlave/63-adela-platkova-vyskumnicka-a-designerka-vzdelavania-v-sto-skupin" target="_blank" rel="noopener" class="btn btn-secondary">
+                🎙️ Podcast Mlíko v Hlavě
+            </a>
+            <a href="https://www.stoskupin.cz" target="_blank" rel="noopener" class="btn btn-secondary">
+                Sto Skupin
+            </a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <img src="images/goa_sedlcany_logo.jpeg" alt="GOA Sedlčany" class="footer-logo">
+        <p>Gymnázium a SOŠ ekonomická Sedlčany</p>
+    </footer>
 </body>
 </html>
